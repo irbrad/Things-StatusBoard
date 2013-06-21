@@ -8,7 +8,7 @@ $decoded_json = json_decode( $file_data, true );
 $datapoints = $decoded_json["graph"]["datasequences"][0]["datapoints"];
 
 if ( !count($datapoints) ) {
-	for ($offset = 0; $offset <= 6; $offset++) {
+	for ($offset = 6; $offset >= 0; $offset--) {
 		$temp_data = array(
 			"title" => date( "l", strtotime("-".$offset." days") ),
 			"value" => 0
@@ -41,5 +41,5 @@ array_push( $datapoints, $new_record );
 
 if ( $datapoints != $decoded_json["graph"]["datasequences"][0]["datapoints"] ) {
 	$decoded_json["graph"]["datasequences"][0]["datapoints"] = $datapoints;
-   file_put_contents( $filename, json_encode($decoded_json) );
+    file_put_contents( $filename, json_encode($decoded_json) );
 }
