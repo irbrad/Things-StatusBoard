@@ -1,0 +1,14 @@
+{
+   "graph":{
+      "title":"Things",
+      "total":false,
+      "type":"bar",
+      "datasequences":[
+         {
+            "title":"Todo's Remaining",
+            "datapoints":[
+            ]
+         }
+      ]
+   }
+}
